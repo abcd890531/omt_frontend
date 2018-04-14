@@ -1,0 +1,42 @@
+
+.title_city_activity {
+  margin: 35px 0 -5px 0 !important
+}
+.disab {
+    color:#CCC  !important;
+}
+.activities-images {
+  height:256px !important;
+  width: 364px !important;
+}
+#colpeople{
+  width: 11%;
+}
+#transfertype{
+  width: 14%;
+}
+#transferdates{
+  width: 18.666%;
+}
+#colpickup, #coldropoff{
+  width: 23.6666%;
+}
+
+#searchbutton {
+  margin-top: 10px;
+  background-color: rgb(0, 163, 153);
+}
+.badgeWeekEnabled {
+  color: white;
+  background: #00FF00;
+  background: rgba(0, 163, 153, 0.8);
+  padding: 5px 10px;
+  border-radius: 100px;
+}
+.badgeWeekDisabled {
+  color: white;
+  background: #000;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 5px 10px;
+  border-radius: 100px;
+}

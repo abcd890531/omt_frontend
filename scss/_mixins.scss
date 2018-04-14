@@ -1,0 +1,220 @@
+// vars
+
+$color__brand-orange:         #e9591b;
+$color__brand-turquoise:      #00a399;
+$color__brand-lightgray:      #f4f2f1;
+$color__brand-yellow:         #e9b516;
+
+$color__text-heading:         #2e2e2e;
+$color__text-body:            #3e3e3e;
+
+$color__text-small:           #5c5c5c;
+$color__text-muted:           #7b7b7b;
+$color__text-dark:            #1f1f1f;
+
+$color__text-footer:          #6e6e6e;
+
+$color__border-silver:        #d8d8d8;
+$color__border-lightgray:     #c8c8c8;
+
+$shadow__drop: 0 0 9px rgba(#2c2c2c, 0.41);
+
+
+// container width: 1140px 
+
+
+// bootstrap media queries 
+@mixin breakpoint($point) {
+  @if $point == xxs {
+    @media (max-width: 480px) { @content; }
+  }
+  @if $point == xxs-min {
+    @media (min-width: 481px) { @content; }
+  }
+  @if $point == xs {
+    @media (max-width: 767px) { @content; }
+  }
+  @if $point == sm {
+    @media (min-width: 768px) { @content; }
+  }
+  @if $point == sm-max {
+    @media (max-width: 991px) { @content; }
+  }
+  @if $point == sm-only {
+    @media (min-width: 768px) and (max-width: 991px) { @content; }
+  }
+  @if $point == md {
+    @media (min-width: 992px) { @content; }
+  }
+  @if $point == md-max {
+    @media (max-width: 991px) { @content; }
+  }
+  @if $point == lg {
+    @media (min-width: 1200px) { @content; }
+  }
+}
+
+// extends 
+%text-light {
+  font-weight: 100;
+}
+%text-book {
+  font-weight: 300;
+}
+%text-regular {
+  font-weight: 400;
+}
+%text-medium {
+  font-weight: 500;
+}
+%text-bold {
+  font-weight: bold;
+}
+%text-left {
+  text-align: left;
+}
+%text-center {
+  text-align: center;
+}
+%text-uppercase {
+  text-transform: uppercase;
+}
+%text-underline {
+  text-decoration: underline;
+}
+%no-background {
+  background: none;
+}
+%no-border {
+  border: none;
+}
+%no-border-radius {
+  border-radius: 0;
+}
+%no-text-decoration {
+  text-decoration: none;
+}
+%no-box-shadow {
+  box-shadow: none;
+}
+
+%radius-100 {
+  border-radius: 100px;
+}
+
+%shadow-drop {
+  box-shadow: $shadow__drop;
+}
+%shadow-input {
+
+}
+
+
+%default-box-shadow {
+  box-shadow: 0 2px 2px rgba(#000,0.05);
+}
+%inset-box-shadow {
+  box-shadow: inset 0 3px 2px rgba(#000, 0.16);
+}
+
+// Converted to SCSS from http://minimalmonkey.com/sass-triangle-mixin/
+@mixin triangle($width: 20px, $height: 20px, $direction: up, $color: gray) {
+  @extend %triangle;
+  // Right
+  @if $direction == right {
+    // border-top: $height/2 inset transparent;
+    // border-bottom: $height/2 inset transparent;
+    // border-left: $width solid $color;
+    border-width: $height/2 0 $height/2 $width;
+    border-color: transparent transparent transparent $color;
+  }
+  // Left
+  @if $direction == left {
+    border-width: $height/2 $width $height/2 0;
+    border-color: transparent $color transparent transparent;
+  }
+  // Up
+  @if $direction == up {
+    border-width: 0 $width/2 $height $width/2;
+    border-color: transparent transparent $color transparent;
+  }
+  // Down
+  @if $direction == down {
+    border-width: $height $width/2 0 $width/2;
+    border-color: $color transparent transparent transparent;
+  }
+}
+%triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+
+// from bootstrap-sass
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: $background;
+        border-color: darken($border, 25%);
+  }
+  &:hover {
+    color: $color;
+    background-color: darken($background, 10%);
+        border-color: darken($border, 12%);
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color;
+    background-color: lighten($background, 8%);
+        border-color: lighten($border, 8%);
+
+    &:hover,
+    &:focus,
+    &.focus 
+    {
+      color: $color;
+      background-color: $background;
+          border-color: lighten($border, 6%);
+    }
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $background;
+          border-color: $border;
+    }
+  }
+
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}
+
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+}

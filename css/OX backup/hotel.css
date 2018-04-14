@@ -1,0 +1,63 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 29, 2017, 1:56:25 PM
+    Author     : ruizmilian
+*/
+
+.material-icons, .mdicon{
+    padding-left: 3px;
+}
+
+.hotel_map_content{
+    height: 450px;
+}
+
+.max-occupancy{
+    font-size:18px;
+    padding:0px ;
+}
+
+h4{
+    padding-top:10px;
+}
+.vcenter {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+}
+.vbottom {
+    display: table-cell;
+    vertical-align: bottom;
+    float: none;
+}
+.table-view{
+    display: table;
+    height:230px;
+}
+.table-view div{
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+.total-price{
+    font-weight: bold;
+}
+.room-details p{
+    font-size:14px;
+}
+
+.package__header span.mdicon{
+    /*font-size: 20px; */
+    padding: 0px;
+    top: -2px;
+    left: -2px;
+    position: relative;
+    color: #494949;
+}
+
+.hotel__amenity  span.mdicon{
+    color:#00a399;
+}

@@ -1,0 +1,1109 @@
+/*********************
+Bootstrap Overrides
+*********************/
+
+.container-fluid {
+  max-width: 1140px;
+}
+
+/* Additional Column Size */
+  .col-sm-onefifth {
+    position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px;
+  }
+  @include breakpoint(sm) {
+    .col-sm--onefifth {
+      width: 20%;
+      float: left; 
+    }
+  }
+
+/* Navbar Default */
+  // .navbar--menu {
+  .navbar-default {
+    @extend %text-book;
+    background: none;
+    border-width: 0 0 1px;
+    border-color: $color__border-silver;
+    border-radius: 0;
+    background: linear-gradient(#f7f7f7 0%, #fff 58px);
+    .navbar-brand {
+      padding: 7px 10px;
+      height: auto;
+      @include breakpoint(xs) {
+        display: block;
+        width: 100%;
+      }
+      img {
+        margin: 0 auto;
+      }
+    }
+    .navbar-form {
+      margin-top: 0;
+      @include breakpoint(sm) {
+        margin-top: 18px; // alignment 
+      }
+    }
+    .navbar-nav {
+      @extend %text-center;
+      margin-top: 7px; // alignment
+      > li > a {
+        color: #2f2f2f;
+        line-height: 40px;
+        @include breakpoint(xs) {
+          padding: 0 5px;
+        }
+      }
+      > li > .dropdown-menu {
+        @extend %no-border;
+        border-radius: 4px;
+      }
+    }
+    .dropdown-menu {
+      
+    }
+    .inputgroup--search {
+      @include breakpoint(sm-only) {
+        // max-width: 270px;
+      }
+      @include breakpoint(sm) {
+        min-width: 440px;
+      }
+      .input-group-addon {
+        width: 30px;
+        padding-left: 10px;
+        padding-right: 5px;
+      }
+    }
+  }
+
+/* Panels */
+  .panel {
+    box-shadow: 0 2px 10px rgba(#c0c0c0, 0.26);
+    // @extend %shadow-drop;
+  }
+
+/* Dropdown Menu */
+  
+  .navbar-nav .open .dropdown-menu {
+    @extend %shadow-drop;    
+  }   
+  @include breakpoint(xs) {
+    .navbar-nav .dropdown {
+      position: static;
+    }
+    .navbar-nav .open .dropdown-menu {
+      position: absolute;
+      left: 5px;
+      right: 5px;
+      background: #fff;  
+    }
+    .navbar-nav .open .dropdown-menu .dropdown-header, .navbar-nav .open .dropdown-menu>li>a {
+      padding: 10px;
+    }
+  }
+
+  .dropdown-toggle {
+    &:focus, &.active,
+    .btn-group.open & { 
+      @extend %no-box-shadow;
+    }
+  }
+  .dropdown-menu {
+    min-width: 220px;
+    padding: 0;
+    @extend %no-border;
+    @extend %shadow-drop;
+    li {
+      margin-left: 10px;
+      border-top: 1px solid $color__border-silver;
+    }
+    &.panel li {
+      margin-left: 0;
+    }
+    li:first-child {
+      @extend %no-border;
+    }
+    li > a {
+      color: $color__text-dark;
+        // line-height: 30px;
+      padding: 10px;
+      @include breakpoint(sm) {
+        padding: 10px 10px 10px 20px;
+      }
+      &:hover {
+        color: $color__brand-turquoise;
+        @extend %no-background;
+      }
+    }
+    li > a > .mdicon {
+      &:first-child {
+        font-size: 24px;
+        margin-left: -10px;  
+        margin-right: 5px;
+        @include breakpoint(sm) {
+          margin-left: -20px;  
+        }
+      }
+    }
+  }
+    .dropdown__header {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: $color__text-small;
+      @extend %text-uppercase;
+      margin: 0;
+      padding: 10px 15px;
+      background: #f5f5f5;
+      .dropdown-menu & {
+        border-radius: 4px 4px 0 0;
+      }
+    }
+    .dropdown__buttons {
+      @extend %text-center;
+      padding: 15px;
+    }
+    .dropdownmenu--myquotes {
+      padding: 0;
+      @include breakpoint(sm) {
+        min-width: 355px;
+      }
+      li {
+        margin-top: 0;
+        // padding: 10px 10px 10px 15px;
+        &, &:first-child {
+          border-top: none;
+          border-bottom: 1px solid $color__border-silver;
+        }
+      }
+      .dropdown__buttons .btn {
+        @include breakpoint(xs) {
+          display: block;
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+/* Bootstrap Text */
+  .text-warning { color: $color__brand-orange; }
+  .text-success { color: #279e02; }
+  .text-danger  { color: #de3030; }
+  
+  .text--yellow { color: $color__brand-yellow; }
+
+  .text--small {
+    color: $color__text-small;
+  }
+  .text--xs--center {
+    @include breakpoint(xs) {
+      text-align: center;
+    }
+  }
+  .text--sm--right {
+    @include breakpoint(sm) {
+      text-align: right;
+    }
+  }
+
+/* Bootstrap Badge */
+  .badge {
+    background: #000;
+    background: rgba(#000, 0.7);
+    @extend %radius-100;
+    padding: 5px 10px;
+    &, .ion {
+      color: #fff;
+    }
+  }
+  .badge--light {
+    color: $color__text-dark;
+    background: #fff;
+    background: rgba(#fff, 0.9);
+    .ion {
+      color: $color__brand-turquoise;
+    }
+  }
+
+/* Bootstrap Buttons */
+  .btn {
+    // if has no other class 
+    // background: transparent;
+    &:focus {
+      outline: none;
+    }
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle,
+    &:active:hover, 
+    &.active:hover {
+      @extend %no-box-shadow;
+    }
+  }
+
+  .btn-group-sm>.btn, .btn-sm {
+    font-size: 13px;
+    padding: 7px 15px;
+  }
+  .btn-group-md>.btn, .btn-md {
+    font-size: 15px;
+    padding: 8px 15px;
+  }
+  .btn-group-lg>.btn, .btn-lg {
+    padding: 15px 20px;
+    border-radius: 4px;
+    // font-size: 24px;
+    // padding: 22px 16px;
+  }
+
+  .btn-default {
+    color: #494949;
+    .open > &.dropdown-toggle,
+    &:active,
+    &.active,
+    &:focus:hover,
+    &.active:focus,
+    &.active.focus,
+    &:active:hover, 
+    &.active:hover {
+      color: #fff;
+      background: $color__brand-turquoise;
+    }
+    &.disabled,
+    &.disabled:hover,
+    &[disabled],
+    &[disabled]:hover {
+      background: #e7e7e7;
+    }
+  }
+  .btn-primary {
+    @include button-variant(#fff, $color__brand-turquoise, $color__brand-turquoise);
+  }
+  .btn-warning {
+    @include button-variant(#fff, $color__brand-orange, $color__brand-orange);
+  }
+  .btn--yellow {
+    border-color: $color__brand-yellow;
+    .ion, .mdicon {
+      color: $color__brand-yellow;
+    }
+  }
+
+  .btn-link {
+    color: inherit;
+  }
+
+  .btn--pill {
+    border-radius: 100px;
+  }
+  .btngroup--separate .btn--pill {
+    border-radius: 100px !important;
+  }
+
+  .btn--iconlink {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: $color__text-footer;
+    margin-right: -5px; // whitespace 
+    padding: 0 8px;
+    @extend %text-uppercase;
+    .mdicon {
+      font-size: 20px;
+      margin: 0 0 2px;
+    }
+    +.btn--iconlink {
+      border-left: 1px solid $color__border-silver;
+    }
+  }
+
+  .btn--underline {
+    border-width: 0 0 1px;
+    border-bottom: 1px solid $color__border-silver;
+    @extend %no-border-radius;
+  }
+
+  .btn--remove {
+    padding: 0;
+    @extend %no-background;
+    .mdicon {
+      font-size: 16px;
+      color: red;
+    }
+  }
+
+  .btn--delete,
+  .btn--edit,
+  .btn--copy,
+  .btn--send {
+    .mdicon,
+    .ion {
+      font-size: 24px;
+      color: $color__text-muted;
+    }
+  }
+
+/* Bootstrap Button Group */
+  .btn-group {
+    .btn--underline {
+      @extend %text-medium;
+      margin: 0 10px;
+      padding: 2px 5px;
+      border-color: $color__text-dark;
+      border-style: dotted;
+      border-width: 0 0 1px;
+      &.active {
+        border-style: solid;        
+      }
+      &.active, &:active, &.focus, &:focus {
+        @extend %no-box-shadow;
+      }
+      + .btn,
+      &:first-child {
+        margin-left: 10px;
+      }
+    }
+  }
+  .btngroup--separate {
+    .btn {
+      margin-left:  5px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+    .btn + .btn {
+      margin-left:   5px;
+      margin-bottom: 5px;
+      &.btn-block {
+        margin-left: 0;
+      }
+    }
+    > .btn:first-child:not(:last-child):not(.dropdown-toggle),
+    > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
+    > .btn:last-child:not(:first-child) {
+      border-radius: 4px;
+    }
+    > .btn-sm:first-child:not(:last-child):not(.dropdown-toggle),
+    > .btn-sm:not(:first-child):not(:last-child):not(.dropdown-toggle),
+    > .btn-sm:last-child:not(:first-child) {
+      border-radius: 3px;
+    }
+  }
+  .btngroup--checkvisible {
+    .btn input[type=radio],
+    .btn input[type=checkbox] {
+      clip: auto;
+      position: static;
+      pointer-events: all;
+      margin-top: 0;
+      vertical-align: middle;
+    }
+  }
+
+/* Bootstrap Input */
+  .form-control {
+    color: $color__text-dark;
+    box-shadow: 0 2px 4px rgba(#000, 0.16);
+  }
+  // .form-control, .input--underline {
+  .form-control, .input--select {
+    cursor: pointer;
+    border-color: $color__border-silver;
+    &:focus, &:active, &.focus, &:active:focus, &:active.focus {
+      border-color: inherit;
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  .input--underline,
+  .input--select {
+    font-size: 17px;
+    text-align: left;
+    padding: 5px 20px 5px 5px;
+    border-width: 0 0 1px;
+    @extend %no-border-radius;
+    box-shadow: none;
+    &.input-sm,
+    &.btn-sm {
+      font-size: 13px;
+    }
+  }
+  .input--underline {
+    // underline, like material design input 
+    padding-right: 5px;
+    padding-left:  5px;
+  }
+  .input--select {
+    // like underline but with arrow     
+    -webkit-appearance: none;
+    &, &:active, &.active {
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%2300a399'><polygon points='0,0 100,0 50,50'/></svg>") no-repeat;
+      background-size: 13px;
+      background-position: 100% 70%;
+      background-repeat: no-repeat;
+    }
+    + label {
+      
+    }
+    &[disabled] {
+      opacity: 0.5;
+      background-color: transparent;
+    }
+  }
+
+  .label--inline {
+    font-size: 17px;
+    color: $color__text-small;
+    vertical-align: bottom;
+    margin-bottom: 6px;
+    + .btn-group,
+    // + .input--underline {
+    + .input--select {
+      margin-left:  7px;
+      margin-right: 7px;
+    }
+  }
+
+  legend {
+    font-size: 18px;
+    @extend %no-border;
+  }
+
+  .form-inline {
+    .form-group {
+      margin-right: 10px;
+    }
+  }
+
+/* Bootstrap Input Groups */
+  .inputgroup--underline,
+  .inputgroup--select {
+    .input-group-addon {
+      color: $color__text-muted;
+      border-width: 0 0 1px;
+      @extend %no-background;
+      @extend %no-border-radius;
+    }
+  }
+  .inputgroup--underline {
+    .input-group-addon {
+      padding-left: 0;
+      padding-right: 0;
+      background: #fff;
+    }
+  }
+  .inputgroup--search {
+    background: #fff;
+    border: 1px solid $color__border-lightgray;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(#000,0.16);
+    .ion {
+      // color: $color__border-lightgray;
+    }
+    .ion-ios-search, .ion-close-circled, .ion-android-more-vertical {
+      font-size: 24px;
+    }
+    .ion-ios-search {
+      color: $color__brand-turquoise;
+    }
+    .ion-close-circled, .ion-android-more-vertical, .search__detail {
+      color: $color__border-lightgray;
+    }
+    .input-group-addon, .input-group-btn, .form-control {
+      @extend %no-border;
+    }
+    .input-group-addon {
+      width: 30px;
+      @extend %no-background;
+      border-right: none;
+      padding-right: 0;
+    }
+    .form-control {
+      @extend %no-background;
+      border-left: none;
+      @extend %no-box-shadow;
+    }
+  }
+  .inputgroup--date {
+    input[type=date] {
+      -webkit-appearance: none;
+    }
+  }
+  .inputgroup--number {
+    input[type=number] {
+      @extend %text-center;
+      padding: 0;
+    }
+    .plus, .minus {
+      cursor: pointer;
+      line-height: 1;
+      padding: 0 5px;
+      &:hover {
+        .mdicon {
+          color: $color__brand-orange;
+        }
+      }
+    }
+    .mdicon {
+      font-size: 24px;
+    }
+  }
+  .inputgroup--vertical {
+    // display: block;
+    .input-group-addon,
+    .form-control {
+      text-align: center;
+      // width: auto;
+      display: block;
+      float: none;
+      margin: 0 auto;
+      border: none;
+    }
+    .input-group-addon, .sign {
+      width: auto;
+    }
+    .form-control {
+      font-size: 14px;
+      height: auto;
+      z-index: 1;
+      padding: 0;
+    }
+    .sign {
+      padding: 0;
+    }
+    .minus, .plus {
+      padding: 10px 6px;
+      .mdicon {
+        color: $color__text-small;
+      }
+    }
+  }
+
+/* Bootstrap Media */
+  .media, .media + .media {
+    margin-top: 0;
+  }
+  .media-object {
+    max-width: none;
+    @extend %no-border-radius;
+  }
+  .media__nowrap {
+    white-space: nowrap;
+  }
+
+/* Bootstrap Popover */
+  .popover {
+    @extend %no-border;
+    @extend %no-border-radius;
+    @extend %shadow-drop;
+  }
+    .popover-title {    
+      font-size: 16px;  
+      margin-bottom: -10px;
+      padding: 20px 20px 0;
+      @extend %no-background;
+      @extend %no-border;
+    }
+    .popover-content {
+      padding: 20px;
+    }
+    .popovertoggle--hover {
+      cursor: pointer;
+      &.mdicon, .mdicon {
+        font-size: 24px;
+      }
+    }
+
+/* Bootstrap Carousel */
+  .carousel-control.left,
+  .carousel-control.right {
+    opacity: 1;
+    @extend %no-background;
+  }
+  .carousel-indicators {
+    margin-bottom: 0;
+    li {
+      opacity: 0.5;
+      &, &.active {
+        width:  5px;
+        height: 5px;
+        margin: 0;
+        border: none;
+      }
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+
+  .carousel--product {
+    .carousel-control {
+      opacity: 1;
+      .ion {
+        font-size: 64px;
+        text-shadow: 0 0 21px rgba(#000,0.58);
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -32px;
+      }
+    }
+    .carousel-indicators {
+      margin-bottom: 0;
+      li {
+        &, &.active {
+          background: #fff;
+        }
+      }
+    }
+  }
+  .carousel--nearby {
+    .carousel-control.left,
+    .carousel-control.right {
+      font-size: 14px;
+
+      @extend %text-uppercase;
+      text-shadow: none;
+      color: $color__text-dark;
+      top: auto;
+      // width:  40px;
+      width: auto;
+      height: 40px;
+      line-height: 40px;
+    }
+    .carousel-control .ion {
+      font-size: 24px;
+      color: $color__text-body;
+    }
+    .carousel-indicators {
+      position: static;
+      margin: 0 auto;
+      padding: 15px 0;
+      li {
+        &, &.active {
+          background: #000;
+        }
+      }
+    }
+    .item {
+      margin: 0;
+    }
+  }
+  .carousel--addnearby {
+    @include breakpoint(sm) {
+      padding-left:  40px;
+      padding-right: 40px;
+      .carousel-control.left,
+      .carousel-control.right {
+        top: 0;
+        height: 100%;
+      }
+      .carousel-control .ion {
+        font-size: 44px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        margin-top: -22px;
+      }
+    }
+  }
+
+/* Bootstrap Tabs */
+  .nav-tabs {
+    border-bottom: 2px solid $color__border-lightgray;
+    li {
+      margin-bottom: -2px;
+      > a {        
+        color: $color__text-muted;
+        @extend %text-center;
+        margin: 0;
+        border: 2px solid transparent;
+        border-width: 0 0 2px;
+        @extend %no-border-radius;
+        &:focus, &:hover {
+          color: $color__brand-turquoise;
+          background-color: transparent;
+          border-color: $color__border-silver;
+        }
+        .hotel__main & {
+          font-size: 15px;
+          @extend %text-medium;
+        }
+      }
+      &.col-sm-6 {
+        padding-left:  0;
+        padding-right: 0;
+      }
+    }
+    li.active {
+      > a {
+        &, &:focus, &:hover {
+          color: $color__text-body;
+          background-color: transparent;
+          border: 2px solid $color__brand-turquoise;
+          border-width: 0 0 2px;
+          // .modal-header & {
+          //   border-width: 0 0 3px;
+          // }
+        }
+      }
+    }
+  }
+  // .modal-header .nav-tabs { 
+  .navtabs--lg {
+    border-bottom: 3px solid #bebebe;
+    @include breakpoint(sm) {
+      &.row {
+        margin-left:  -40px;
+        margin-right: -40px;
+      }
+    }
+    li {
+      margin-bottom: -3px;  
+      &.col-sm-6 {
+        padding-left:  0;
+        padding-right: 0;
+      }
+    }
+    li > a {
+      @include breakpoint(sm) {
+        font-size: 18px;
+      }
+    }
+    li > a, 
+    li.active > a,
+    li.active > a:focus,
+    li.active > a:hover {
+      // .modal-header & {
+        border-width: 0 0 3px;
+      // }
+    }
+  }
+    .navtabs__or {
+      @extend %text-center;
+      @include breakpoint(xs) {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+      }
+      @include breakpoint(sm) {
+        width: 20px;
+        position: absolute;
+        top: 15px;
+        right: -10px;
+      }
+    }
+  .navtabs--icon {
+    > li > a {
+      @extend .small--upper;
+    }
+  }
+    .navtabs__icon {
+      font-size: 32px;
+      display: block;
+      margin: 5px auto 8px;
+      .nav-tabs > li.active > a & {
+        color: $color__brand-turquoise;
+      }
+    }
+  .tab-pane {
+    padding-top: 20px;
+  }
+    .tab__title {
+      margin-top: 5px;
+      margin-bottom: 20px;
+      &.pull-left {
+        
+      }
+    }
+
+/* Bootstrap Table */
+  .table {
+    border: 1px solid #ddd;
+    >tbody>tr>th {
+      vertical-align: middle;
+    }
+  }
+    .table>thead>tr>td, .table>thead>tr>th,
+    .table>tbody>tr>td, .table>tbody>tr>th {
+      @include breakpoint(md) {
+        padding: 15px;
+      }
+    }
+    .table>thead>tr {
+      th, td {
+        border: none;
+      }
+    }
+    th {
+      @extend %text-regular;
+    }
+  .table-responsive {
+    padding: 0 1px;
+    @include breakpoint(xs) {
+      border: none;
+    }
+  }
+
+  .table--middle {
+    thead tr, tbody tr {
+      th, td {
+        vertical-align: middle;
+      }
+    }
+  }
+  .table--outerth {
+    border-width: 0 0 1px;
+    tbody>tr>th:first-child,
+    tbody>tr>td:first-child {
+      border-left: 1px solid #ddd;
+    }
+    tbody>tr>th:last-child,
+    tbody>tr>td:last-child {
+      border-right: 1px solid #ddd;
+    }
+  }
+  .table--dense {
+    tbody, thead {
+      tr {
+        th, td {
+          padding: 5px;
+        }
+      }
+    }
+  }
+  
+
+/* Bootstrap Close */
+  .close {
+    opacity: 1;
+  }
+
+/* Bootstrap Modal */
+  .modal {
+    .close {
+      color: $color__text-dark;
+      text-shadow: none;
+      width: 36px;
+      position: absolute;
+      top:   5px;
+      right: 5px;
+      @include breakpoint(sm) {
+        top:    -30px;
+        right:  -40px;
+      }
+      .ion {
+        font-size: 36px;
+        position: relative;
+        &:before {
+          position: relative;
+          z-index: 2;
+        }
+        &:after {
+          content: '';
+          width:  20px;
+          height: 20px;
+          position: absolute;
+          z-index: 1;
+          top: 50%;
+          left: 50%;
+          margin-top: -10px;
+          margin-left: -10px;
+          background: #fff;
+          @extend %radius-100;
+        }
+      }
+    }
+  }
+    .modal-dialog {
+      margin-top: 40px;
+    }
+      .modal-sm {
+        @include breakpoint(sm) {
+          width: 420px;
+        }
+      }
+    .modal-header {
+      position: relative;
+      border-bottom: none;
+    }
+      .modalheader--center {
+        @extend %text-center;
+        border-bottom: 2px solid $color__brand-turquoise;
+        .modal-title {
+
+        }
+      }
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+      @include breakpoint(sm) {
+        padding-left:  40px;
+        padding-right: 40px;  
+      }
+    }
+    .modal-body,
+    .modal-footer {
+      background: #f5f5f5;
+    }
+    .modal-body {
+      + .modal-footer {
+        padding-top: 0;
+        .modal--plain & {
+          padding-top: 20px;
+        }
+      }
+      .modal--plain & {
+        background: #fff;
+      }
+    }
+    .modal-footer {
+      @extend %no-border;
+      border-radius: 0 0 6px 6px;
+      hr {
+        margin-left:  -15px;
+        margin-right: -15px;
+        border-color: #ccc;
+        @include breakpoint(sm) {
+          margin-left:  -40px;
+          margin-right: -40px;
+        }
+      }
+      .btn-md {
+        min-width: 100px;
+      }
+    }
+
+/* HR */
+  .hr--down {
+    position: relative;
+    width: 600px;
+    height: 20px;
+    display: block;
+    overflow: visible;
+    border: none;
+    @include breakpoint(xs) {
+      display: none;
+    }
+    &:before, &:after {
+      content: '';
+      // width: 600px;
+      // height: 20px;
+      position: absolute;
+    }
+    &:before {
+      z-index: 2;
+      top: 0;
+      left: 5px;
+      @include triangle(588px, 21px, down, #fff);
+    }
+    &:after {
+      z-index: 1;
+      top: 0;
+      left: -1px;
+      @include triangle(600px, 22px, down, #ccc);
+    }
+    .modal-body & {
+      margin-left: -40px;
+      margin-top: -15px;
+    }
+  }
+
+/* Images */
+  .img-thumbnail {
+    padding: 0;
+  }
+
+/* Datepicker */
+  .daterangepicker {
+    @include breakpoint(sm) {
+      padding: 20px;
+    }
+    &.dropdown-menu {
+      width: auto;
+    }
+    .calendar {
+      max-width: none;
+    }
+    th.month {
+      font-size: 18px;
+    }
+    td, th {
+      @extend %no-border-radius;
+    }
+    tbody>tr>td {
+      padding: 10px;
+      // border: 1px solid #ddd;
+    }
+    td.available:hover {
+      // border-color: #ddd;
+    }
+    td.in-range {
+      background:   #80e7e1;
+      // border-color: #80e7e1;
+    }
+    td.start-date,
+    td.end-date {
+      @extend %no-border-radius;
+      background: $color__brand-turquoise;
+    }
+    td.start-date.end-date {
+      @extend %no-border-radius;
+    }
+    td.active, td.active:hover {
+      background:   $color__brand-turquoise;
+      // border-color: $color__brand-turquoise;
+    }
+    &.ltr .ranges {
+      // @media screen and (min-width: 730px) {
+      //   float: none;
+        
+      // }
+      @media screen and (min-width: 564px) {
+        float: none;
+        clear: both;
+      }
+    }
+    .range_inputs {
+      overflow: hidden;
+      .applyBtn {
+        float: right;
+      }
+      .cancelBtn {
+        float: left;
+      }
+    }
+  }
+
+/* Bootstrap Progress Bar */
+  .progress {
+    height: 10px;    
+    background: #c5c5c5;
+    border-radius: 100px;
+    @extend %no-box-shadow;
+  }
+    .progress-bar {
+      background: $color__brand-turquoise;
+      @extend %no-box-shadow;
+    }
+
+/* Range Slider */
+  .slider.slider-horizontal {
+    // width: 200px;
+    width: 70%;
+  }
+  .slider-handle {
+    width:  30px;
+    height: 30px;
+    top: -5px;
+    background: #fff;
+    border: 1px solid $color__brand-turquoise;
+  }
+  .slider-track {
+    background: #ddd;
+    @extend %no-box-shadow;
+  }
+    .slider-selection {
+      background: $color__brand-turquoise;
+      @extend %no-box-shadow;   
+    }

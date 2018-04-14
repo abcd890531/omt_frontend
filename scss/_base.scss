@@ -1,0 +1,217 @@
+/*********************
+Base Styles & Layout
+*********************/
+body,
+.popover,
+.tooltip,
+.gm-style-iw {
+  font-family: "filson-soft", "Filson Soft", "Avenir", "Proxima Nova", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  color: $color__text-body;
+}
+
+body {
+  // custom paddings for fixed menu 
+  $body-padding: 30px;
+  @include breakpoint(xs) {
+    padding-top: 213px + $body-padding;
+  }
+  // @media screen and (min-width: 768px) and (max-width: 967px) {
+  @media screen and (min-width: 768px) and (max-width: 1002px) {
+    padding-top: 154px + $body-padding;
+  }
+  // @media screen and (min-width: 968px) {
+  @media screen and (min-width: 1003px) {
+    padding-top: 85px + $body-padding;
+  }
+  &.page--itinerary {
+    @media screen and (min-width: 0) {
+      padding-top: 30px;
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $color__text-heading;
+  @extend %text-regular;
+}
+h1 {
+  font-size: 25px;
+  margin-top: 0;
+}
+h2 {
+  font-size: 18px;
+  .tab-pane & {
+    color: #383a3d;
+  }
+}
+h3 {
+  font-size: 17px;
+  color: $color__text-body;
+}
+h4 {
+  font-size: 16px;
+}
+  p + h4 {
+    margin-top: 20px;
+  }
+h5 {
+  font-size: 15px;
+}
+h6 {
+  font-size: 14px;
+}
+.section__title {
+  font-size: 24px;
+}
+
+small {
+
+}
+
+a {
+  color: $color__brand-turquoise;
+  &[href^="tel:"] {
+    color: $color__text-footer;
+  }
+}
+
+a, button, .form-control, .dropdown-menu {
+  // hide overflowing text 
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+a, button, .form-control {
+  transition: 0.3s ease-in-out color, 0.3s ease-in-out background, 0.3s ease-in-out border;
+}
+
+a, .btn-link {
+  &:focus, &:hover, &:active {
+    text-decoration: none;
+    color: $color__brand-orange;
+  }
+}
+
+p {
+  @extend %text-book;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 3px;
+  transition: 0.3s ease-in-out opacity;
+}
+
+.small--upper,
+.table thead th {
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  // color: $color__text-footer;
+  color: #646464;
+  @extend %text-uppercase;
+  .dropdown-menu .media-body & {
+    display: inline-block;
+  }
+}
+.text-left {
+  text-align: left;
+}
+
+big {
+  font-size: 16px;
+  color: $color__text-dark;
+}
+
+.icon,
+.ion,
+.mdicon {
+  font-size: 16px;
+  @extend %text-center;
+  display: inline-block;
+  vertical-align: middle;  
+}
+
+.ion {  
+  .btn & {
+    // margin-left: 10px;
+  }
+  &.ion-ios-arrow-back {
+    // margin-left: 0;
+  }
+  .btn-link &,
+  .btn--close & {
+    // margin-left: 0;
+  }
+  .btn-link & {
+    color: $color__brand-turquoise;
+    &.text-warning {
+      color: $color__brand-orange;
+    }
+  }
+  &.text-muted {
+    color: $color__border-lightgray;
+  }
+}
+
+.ion-android-star {
+  color: $color__brand-yellow;
+}
+.ion-android-calendar {
+  .input--select & {
+    margin-left: 0;
+    margin-right: 5px;
+  }
+}
+
+.mdicon {
+  color: $color__brand-turquoise;
+  @extend %text-center;
+  label.small--upper & {
+    // font-size: 16px;
+  }
+  h2 & {
+    font-size: 24px;
+  }
+}
+
+label {
+  @extend %text-regular;
+  text-transform: none;
+}
+
+section {
+
+}
+
+.footer {
+  font-size: 15px;
+  line-height: 1.7;
+  color: $color__text-footer;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding-top: 20px;
+  border-top: 1px solid $color__border-silver;
+}
+  .footer__title {
+    font-size: 16px;
+  }
+  .footer__copyright {
+    font-size: 13px;
+    line-height: 55px; // align to logo height;
+    margin-top: 60px;
+  }
+    .copyright__policy {
+      @include breakpoint(sm) {
+        text-align: right;
+      }
+    }
+    .footer__logo {
+      @include breakpoint(xs) {
+        display: block;
+      }
+      @include breakpoint(sm) {
+        margin-right: 10px;
+      }
+    }
