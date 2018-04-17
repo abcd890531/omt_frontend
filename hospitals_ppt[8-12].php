@@ -5,6 +5,10 @@ $is_switchtoggle = false;
 $is_select = true;
 $is_itinerary = false;
 
+
+$arrayElemnt = array("1" => array("name"=>"Cayman Isl","details1"=>"The Westin Grand Cayman","details2"=>"Grand Cayman","details3"=>"Text"),
+    "2" => array("name"=>"New Orlenas","details1"=>"text text text","details2"=>"Text","details3"=>"Text")
+);
 ?>
 
 <?php include('_header.php'); ?>
