@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6, label, th, .activity__header .activity__name, .product__
 
 .dropdown-menu li > a:hover, .btn--remove, .inputgroup--underline .input-group-addon,
 .inputgroup--select .input-group-addon, .inputgroup--search .input-group-addon, .inputgroup--search .form-control, .popover-title, .carousel-control.left,
-.carousel-control.right, .search__close, .results__name mark, .search__destinations .panel-footer, .search__detail, .locations__city .list-group-item.active {
+.carousel-control.right, .search__close, .search__close_info,.results__name mark, .search__destinations .panel-footer, .search__detail, .locations__city .list-group-item.active {
   background: none;
 }
 
@@ -1503,13 +1503,29 @@ Custom Components
   cursor: pointer;
 }
 
-.search__close {
+.search__close{
   position: absolute;
   z-index: 4;
   top: 0;
   right: 0;
   height: 100%;
 }
+
+#conten
+{
+  top: 103px;
+  left: 803px;
+  display: block;
+  max-width: 550px;
+}
+
+.search__close_info{
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  right: 0;
+  text-align: right;
+  }
 
 @media (max-width: 767px) {
   .search__inputgroup {
@@ -1555,6 +1571,8 @@ Custom Components
   height: 300px;
   overflow-y: scroll;
 }
+
+
 
 @media (max-width: 767px) {
   .results__name, .results__options, .results__city {
@@ -1673,13 +1691,22 @@ Custom Components
   margin-left: 3px;
 }
 
-
-
 .search__details {
   min-width: 375px;
   max-width: none;
 }
 
+
+
+
+
+
+
+.search__details_info
+{
+  min-width: 375px;
+  max-width: 550px;
+}
 
 @media (min-width: 768px) and (max-width: 991px) {
   .search__details {
@@ -1687,21 +1714,53 @@ Custom Components
     left: -180px !important;
   }
 }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .search__details_info {
+    width: 760px;
+    left: -180px !important;
+  }
+}
+
 @media (min-width: 992px) {
   .search__details {
     width: 780px;
   }
 }
+
+@media (min-width: 992px) {
+  .search__details_info {
+    width: 780px;
+  }
+}
+
 .search__details .popover-content {
   margin-left: 0;
   padding: 0;
 }
+
+.search__details_info .popover-content {
+  margin-left: 0;
+  padding: 0;
+}
+
 .search__details .popover-title {
   font-size: 24px;
   margin-bottom: 20px;
   padding: 0;
 }
+
+.search__details_info .popover-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
 .search__details img {
+  width: 100%;
+}
+
+.search__details_info img {
   width: 100%;
 }
 

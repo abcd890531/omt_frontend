@@ -24,16 +24,18 @@
             </li>
           <?php }?>
 
-          <!--<button type="button" class="search__detail btn" data-toggle="popover" data-content-source="#searchdetails1"> <span class="hidden-xs">Details1</span></button>-->
+          <!--<a class="search__detail"  data-content-source="#searchdetails1">lolo</a>-->
+
           <?php if(isset($is_select) && $is_select) {?>
           <li class="menu__mylinks dropdown">
             <div class=" navbar-form navbar-left" id="">
               <div id="select_header" class=" inputgroup--search  input-group">
-                <select name="" id="" class="form-control"><label class="search__icon input-group-addon" for="search__input" id="search__icon"><span class="ion-ios-search ion"></span></label>
-                  <option value="0"  >All Destinations...</option>
-                  <option value="1" <?php if(isset($destination_select)&&$destination_select==1) echo "selected='selected'";?> ><a  href="index.php">Cayman Isla</a> </option>
-                  <option value="2" <?php if(isset($destination_select)&&$destination_select==2) echo "selected='selected'";?>>New Orleans</option>
-                </select>
+                <select id="select_ini" name="forma" onchange=nav(this.value) class="form-control" >
+                    <label class="search__icon input-group-addon" for="search__input" id="search__icon"><span class="ion-ios-search ion"></span></label>
+                    <option id="ini" value="0" >All Destinations...</option>
+                    <option value="1"  <?php if(isset($destination_select)&&$destination_select==1) echo "selected='selected'";?> ><a  href="index.php">Cayman Isla</a> </option>
+                    <option value="2" <?php if(isset($destination_select)&&$destination_select==2) echo "selected='selected'";?>>New Orleans</option>
+                  </select>
               </div>
             </div>
           </li>

@@ -6,11 +6,11 @@
 ?>
 
 <form class="search navbar-form navbar-left <?php echo $search__class; ?>" id="search">
-          
+
 
           <div class="search__inputgroup inputgroup--search input-group-lg input-group">
             <label class="search__icon input-group-addon" for="search__input" id="search__icon"><span class="ion-ios-search ion"></span></label>
-            <button type="button" class="search__close btn--close btn"><span class="ion-close-circled ion"></span></button> 
+            <button type="button" class="search__close btn--close btn"><span class="ion-close-circled ion"></span></button>
             
             <input type="text" class="form-control input-lg " id="search__input" placeholder="<?php if (isset($value_placeholder) ) { echo $value_placeholder; } ?>" aria-describedby="search__icon" value="<?php if (isset($is_page_destination) ) { echo 'Las Vegas'; } ?>">
 
@@ -68,7 +68,7 @@
               </div>
 
               <button type="button" class="search__detail btn pull-right small--upper" data-toggle="popover" data-content-source="#searchdetails"> <span class="hidden-xs">Details</span> <span class="ion-android-more-vertical ion"></span></button>
-             
+
             </div>
 
           </div><!-- /.search__inputgroup -->
@@ -161,15 +161,33 @@
             </div>
           </div>
         </div>
-        <!--<div id="searchdetails1" class="hide">
-          <div class="searchdetails__content col-sm-8">
-            <header class="searchdetails__header clearfix">
-              <h2 class="popover-title pull-left">Las Vegas, NV</h2>
-            </header>
 
-            <small class="small--upper clearfix">About This Destination</small>
-            <p>serio, consectetur adipisicing elit. Cum doloribus corrupti aliquid dolor ut deleniti qui. Nesciunt soluta quibusdam, esse culpa earum ea quidem, expedita excepturi, numquam repellat alias voluptatibus.</p>
-          </div>
-        </div>-->
+        <div id="pop" class="hide">
+        <div id="conten" class="search__details popover--searchdetails popover fade bottom in" role="tooltip" >
+                      <button id = "close_info" type="button" class="search__close_info btn--close btn" onclick="close_info()"><span class="ion-close-circled ion"></span></button>
+                      <ul class="results__list list-group">
+                        <li class="results__item list-group-item media">
+                          <a  href="destination.php" class="results__name media-body media-middle media__nowrap">
+                            <span class="md-place mdicon text-muted">&#xe55f;</span>
+                            <label id="title_dest"><label>
+                          </a>
+                          <div class="results__options media-body media-middle media__nowrap text-right">
+                            <a href="hospitals_ppt[8-12].php" class="btn--iconlink btn-link btn"><span class="md-explore mdicon">&#xe548;</span> <br> Hospitals</a>
+                            <a href="hotels.php" class="btn--iconlink btn-link btn"><span class="md-hotel mdicon">&#xe53a;</span> <br> Hotels</a>
+                            <a href="airport-transfers.php" class="btn--iconlink btn-link btn"><span class="md-swap_horiz mdicon">&nbsp;&nbsp;</span> <br> <span class="hidden-xs"></a>
+                          </div>
+                        </li>
+                        <li class="results__item list-group-item media">
+                          <a href="hotel.php" class="results__name media-body media-middle">
+                            <span class="md-hotel mdicon text-muted">&#xe53a;</span>
+                            <label id="details1"></label>
+                          </a></br><small class="results__city media-body media-middle text-right"><label id="details2"></label></small>
+
+                          <label id="details3"></label>
+                        </li>
+                      </ul>
+        </div>
+        </div>
+
 
         

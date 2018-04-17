@@ -18,6 +18,34 @@
     },
     h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
     })(document);
+
+    function nav(value) {
+
+
+      if(value == "0")
+        $("#pop").attr('class','hide');
+      else
+      {
+        $("#pop").attr('class','');
+
+        var arrayinfo = <?php echo json_encode($arrayElemnt); ?>;
+       $('#title_dest').html(arrayinfo[value]["name"]);
+       $('#details1').html(arrayinfo[value]["details1"]);
+        $('#details2').html(arrayinfo[value]["details2"]);
+        $('#details3').html(arrayinfo[value]["details3"]);
+
+      }
+    }
+
+      function close_info()
+      {
+        $("#pop").attr('class','hide');
+        $("#select_ini").val(null);
+        $('#ini').prop('selected', 'selected');
+
+
+
+      }
     </script>
     
     <link href="css/ionicons.min.css" rel="stylesheet">
