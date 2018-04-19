@@ -5,8 +5,6 @@
 ?>
 <?php include('_header.php'); ?>
 
-
-
     <main class="main container-fluid">
       <div class="row">
         <button id="botton_message" type="button" class=" message btn-info btn-sm btn"  data-toggle="collapse" data-target=".showmap__collapse">Message Center (3)</button>      
@@ -39,7 +37,8 @@
             </div>
           </div>
           <div class="form-group col-sm-7 col-md-6" >
-              <section class="showmap__collapse in" id="map"  >
+              <button id="botton_map" class="collapse"  data-toggle="collapse" data-target=".showmap__collapse"></button>      
+              <section class="showmap__collapse collapse" id="map"  >
               </section>
               <?php include('_map.php'); ?>
               
@@ -80,4 +79,9 @@
   function mostrar(){
     document.getElementById('select_treatment').style.visibility = 'visible';
   }
+  window.onload = function(){
+    var btn = document.getElementById('botton_map');    
+    btn.click();
+  }
+  
 </script>
