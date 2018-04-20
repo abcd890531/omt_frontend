@@ -7,7 +7,7 @@
 
     <main class="main container-fluid">
       <div class="row">
-        <button id="botton_message" type="button" class=" message btn-info btn-sm btn"  data-toggle="collapse" data-target=".showmap__collapse">Message Center (3)</button>      
+        <button id="botton_message" type="button" class=" message btn-info btn-sm btn" >Message Center (3)</button>      
       </div>
 
       <div class="itinerary__details steps__item">
