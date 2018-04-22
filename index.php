@@ -27,7 +27,7 @@ $arrayElemnt = array("1" => array("name"=>"Cayman Isl","details1"=>"The Westin G
           </div>
           <div class="welcome__right col-sm-5 col-md-4">
             <p>
-              <a href="browse.php" class="btn-info  welcome__btn btn-block btn">Design Your Trip <span class="ion-ios-arrow-right ion"></span></a>
+              <a href="Itinerary_details_ppt[14].php" class="btn-info  welcome__btn btn-block btn">Design Your Trip <span class="ion-ios-arrow-right ion"></span></a>
             </p>
           </div>
           <div class="welcome__left col-sm-7 col-md-8">

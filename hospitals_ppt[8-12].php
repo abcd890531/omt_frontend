@@ -130,62 +130,10 @@ $arrayElemnt = array("1" => array("name"=>"Cayman Isl","details1"=>"The Westin G
             <span class="mdicon">&#xe548;</span> <label>Hospitals</label>
           </div>
             <!-- begin articles of hospitals -->
-            <article class="product col-sm-6 col-md-4">
-
-              <!-- begin carrousel 1 -->
-              <div id="productactivities__carousel" class="carousel--product carousel slide" data-ride="carousel" data-interval="false">
-                <div class="carousel-inner" role="listbox">
-                  <div class="product item active">
-                    <figure class="product__figure">
-                      <img class="product__image" src="http://placehold.it/348x110" alt="Activity image">
-                    </figure>
-                  </div>
-                  <div class="product item">
-                    <figure class="product__figure">
-                      <img class="product__image" src="http://placehold.it/348x110" alt="Activity image">
-                    </figure>                
-                  </div>
-                  <div class="product item">
-                    <figure class="product__figure">
-                      <img class="product__image" src="http://placehold.it/348x110" alt="Activity image">
-                    </figure>
-                  </div>
-                </div>
-                <ol class="carousel-indicators">
-                  <li data-target="#productactivities__carousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#productactivities__carousel" data-slide-to="1" class=""></li>
-                  <li data-target="#productactivities__carousel" data-slide-to="2" class=""></li>
-                </ol>
-                <a class="left carousel-control" href="#productactivities__carousel" role="button" data-slide="prev">
-                  <span class="ion-ios-arrow-back ion" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#productactivities__carousel" role="button" data-slide="next">
-                  <span class="ion-ios-arrow-forward ion" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
-              <!-- end carroucel 1 -->
-
-              <!-- name -->
-              <div>
-                <label>Health City Cayman Islands</label>
-              </div>              
-              <!-- ranking -->
-              <div>
-                <span class="ion-android-star ion"></span><span class="ion-android-star ion"></span><span class="ion-android-star ion"></span><span class="ion-android-star ion"></span><span class="ion-android-star ion"></span>
-              </div>              
-              <!-- button details -->
-              <div>
-                <button class="btn-md btn" data-toggle="collapse" data-target=".package__details">Hospital Details</button>
-                <!-- button rates -->
-                <a href="#quote__add" class="btn-info btn-md btn" data-toggle="modal">View Rates</a>
-              </div>
-              
-            </article>
+            
             
 
-
+          <?php for ( $i = 0; $i < 2; $i++ ) { ?>
             <article class="product col-sm-6 col-md-4">
 
               <!-- begin carrousel 2 -->
@@ -237,10 +185,18 @@ $arrayElemnt = array("1" => array("name"=>"Cayman Isl","details1"=>"The Westin G
               <div>
                 <button class="btn-md btn" data-toggle="collapse" data-target=".package__details">Hospital Details</button>
                 <!-- button rates -->
-                <a href="#quote__add" class="btn-info btn-md btn" data-toggle="modal">View Rates</a>
+
+                <?php if ( !isset($_GET['is_itinerary_details'] )) { ?>
+                  <a href="#quote__add" class="btn-info btn-md btn" data-toggle="modal">View Rates</a>
+                
+                <?php } else {?>
+                  <a href="hospital_show_ppt[19].php" class="btn-info btn-md btn">Knee Replacement: Starting at $12,000</a>
+                
+                <?php }?>
               </div>
               
             </article>
+          <?php } ?>
             <!-- begin articles of hospitals -->
         </div>
       </section>

@@ -54,7 +54,8 @@
       </div>      
          
       <div class="row col-md-6 col-sm-6">
-        <button id="botton_search" type="button" class="message btn-info btn-sm btn">Search</button>      
+        
+        <a id="botton_search" type="button" class="message btn-info btn-sm btn" href="hospitals_ppt[8-12].php?is_itinerary_details=false" >Search</a>      
       </div>
       
     </main>  
